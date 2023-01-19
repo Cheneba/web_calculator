@@ -1,0 +1,271 @@
+/* 
+@media all and (min-width: 450px){
+    body{
+        background-color: rgb(36, 36, 37);
+        filter:brightness(90%);
+        background-image: url('landscape.jpg');
+        background-size: cover;
+        font-family:monospace;
+        max-width: 600px;
+        margin: auto;
+    }
+    .header{
+        height: 100px;
+        font-size: 4em;
+        text-align: center;
+        padding-top: 9%;
+        color: rgb(43, 55, 61);
+    }
+    .header p{
+        margin: 0;
+    }
+
+
+    .screen-display{
+        position: relative;
+        top: -30px;
+        width: 100%;
+        height: 140px;
+    }
+    .screen-display div{
+        height: 44%;
+        width: 55%;
+        margin: auto;
+    }
+    .save-input{
+        position: relative;
+        left: 5px;
+        background-color: rgb(170, 164, 164);  
+        min-width: 40%;
+        max-width: 100%;
+        border-bottom: 1px solid rgb(3, 17, 26);
+        border-radius: 3px 3px 3px 3px;
+        padding-bottom: 2px;
+        text-align: right;
+        padding-right: 10px;
+    }
+     
+    .save-input p{
+        position: relative;
+        top: 18px;
+        font-weight: 100;
+        font-size: 2em;
+    }
+    
+    .input-value input{
+        width: 100%;
+        height: 100%;
+        padding-right: 10px;
+        font-size: 1.5em;
+        text-align: right;
+        border: none;
+        border-bottom: 1px solid black;
+        border-radius: 3px 3px 3px 3px;
+        padding-bottom:2px;
+        outline: none;
+        cursor:text;
+        background: #928e8e;
+    }
+    
+    .save-input:hover, .input-value input:hover{
+        padding-bottom: 0;
+        border-bottom-width: 3px;
+    }
+    .screen-display .input-value input:active{
+        border: 0;
+    }
+
+    .operations{
+        position: relative;
+        top: -30px;
+        height: 250px;
+        width: 56%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: auto;
+    }
+    .operations button{
+        width: 90%;
+        height: 80%;
+        margin: 10% 0;
+        margin: auto;
+    }
+
+    button{
+        font-weight: bold;
+        background-color: #4aa5ff;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 5px;
+        border-color: transparent;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform;
+    }
+    .btn:hover, .btn:active, .btn:focus{
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#e91e63, #effc17);
+    clip-path: circle(12% at 30% 25%);
+}
+body::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff, #da00ff);
+    clip-path: circle(12% at 68% 86%);
+}
+.container
+{
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2)
+}
+.container .calculator
+{
+    position: relative;
+    display: grid;
+}
+.container .calculator .value
+{
+    grid-column: span 4;
+    height: 140px;
+    width: 300px;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 30px;
+    background: transparent;
+    color: #fff;
+    
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+.container .calculator span{
+    display: grid;
+    height: 75px;
+    width: 75px;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.5s;
+}
+.container .calculator span:hover
+{
+    transition: 0s;
+    background: rgba(255, 255, 255, );
+}
+.container .calculator span:active
+{
+    background: #14ff47;
+    color: #195f00;
+    font-weight: 500;
+    font-size: 24px;
+}
+.container .calculator .clear
+{
+    grid-column: span 2;
+    width: 150px;
+}
+.container .calculator .plus
+{
+    grid-row: span 2;
+    height: 150px;
+} 
+.equal
+{
+    background: rgba(255, 255, 255, )0.05
+}
+
+.polygons
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+.body
+{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#da6c6c, #c8c8ff, #68c2f7);
+    clip-path: circle(8% at 20% 50%);
+}
+.body::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#da6c6c, #c8c8ff, #68c2f7);
+    clip-path: circle(8% at 70% 20%);
+}
